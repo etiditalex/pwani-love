@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pwani Love - Dating App</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .app-container {
+            width: 375px;
+            height: 667px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .main-content {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+        
+        .profile-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .profile-age {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .profile-bio {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 30px;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .btn-dislike {
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .btn-like {
+            background: #51cf66;
+            color: white;
+        }
+        
+        .btn-superlike {
+            background: #339af0;
+            color: white;
+        }
+        
+        .status {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <h1>💕 Pwani Love</h1>
+            <p>Find your perfect match</p>
+        </div>
+        
+        <div class="main-content">
+            <div class="profile-card">
+                <div class="profile-image">👩‍🦰</div>
+                <div class="profile-name">Sarah, 25</div>
+                <div class="profile-age">📍 2km away</div>
+                <div class="profile-bio">
+                    "Love exploring new places, trying new foods, and meeting interesting people. 
+                    Looking for someone who shares my passion for adventure and good conversation."
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn btn-dislike" onclick="showMessage('Disliked!')">✕</button>
+                <button class="btn btn-superlike" onclick="showMessage('Super Liked!')">⭐</button>
+                <button class="btn btn-like" onclick="showMessage('Liked!')">♥</button>
+            </div>
+            
+            <div class="status">
+                <div class="loading"></div> Connecting to Pwani Love servers...
+                <br><br>
+                <strong>Demo Mode:</strong> This is a preview of the Pwani Love dating app interface.
+                <br><br>
+                <strong>Features:</strong>
+                <br>• Swipe to like/dislike profiles
+                <br>• Real-time chat with matches
+                <br>• Location-based matching
+                <br>• Profile customization
+                <br>• Photo sharing
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showMessage(message) {
+            alert(message + ' In the full app, this would trigger the matching algorithm!');
+        }
+        
+        // Simulate loading
+        setTimeout(() => {
+            document.querySelector('.status').innerHTML = 
+                '✅ Connected to Pwani Love servers!<br><br>' +
+                '<strong>Demo Mode:</strong> This is a preview of the Pwani Love dating app interface.<br><br>' +
+                '<strong>Features:</strong><br>' +
+                '• Swipe to like/dislike profiles<br>' +
+                '• Real-time chat with matches<br>' +
+                '• Location-based matching<br>' +
+                '• Profile customization<br>' +
+                '• Photo sharing';
+        }, 3000);
+    </script>
+</body>
+</html>
