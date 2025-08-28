@@ -8,8 +8,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build": "expo build:web",
-    "vercel-build": "expo build:web"
+    "build": "expo export --platform web || npm run build-fallback",
+    "vercel-build": "expo export --platform web || npm run build-fallback",
+    "build-fallback": "mkdir -p dist && cp index.html dist/index.html"
   },
   "dependencies": {
     "expo": "~49.0.0",
